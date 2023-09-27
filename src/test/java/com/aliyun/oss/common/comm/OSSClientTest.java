@@ -19,24 +19,21 @@
 
 package com.aliyun.oss.common.comm;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.*;
-
 import com.aliyun.oss.*;
 import com.aliyun.oss.common.auth.Credentials;
 import com.aliyun.oss.common.auth.CredentialsProvider;
 import com.aliyun.oss.common.auth.DefaultCredentialProvider;
 import com.aliyun.oss.internal.OSSConstants;
-import com.aliyun.oss.internal.RequestParameters;
-import com.aliyun.oss.model.GetObjectRequest;
-import junit.framework.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import com.aliyun.oss.model.GeneratePresignedUrlRequest;
+import junit.framework.Assert;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class OSSClientTest {
     @Test
@@ -59,7 +56,7 @@ public class OSSClientTest {
         assertEquals(url.getAuthority(), "bucket.oss.aliyuncs.com");
         assertEquals(url.getHost(), "bucket.oss.aliyuncs.com");
         assertEquals(url.getDefaultPort(), 80);
-        assertEquals(url.getProtocol(), "http");
+        assertEquals(url.getProtocol(), "org/apache/http");
         assertEquals(url.getQuery(), "Expires=1422720000&OSSAccessKeyId=id&Signature=XA8ThdVKdJQ4vlkoggdzCs5s1RY%3D");
         assertEquals(url.getFile(), "/key?Expires=1422720000&OSSAccessKeyId=id&Signature=XA8ThdVKdJQ4vlkoggdzCs5s1RY%3D");
         request.setContentMD5("md5'");

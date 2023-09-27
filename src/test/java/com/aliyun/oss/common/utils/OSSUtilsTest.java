@@ -20,13 +20,11 @@
 package com.aliyun.oss.common.utils;
 
 
-import com.aliyun.oss.ClientConfiguration;
 import com.aliyun.oss.internal.OSSUtils;
 import junit.framework.Assert;
 import org.junit.Test;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -100,7 +98,7 @@ public class OSSUtilsTest {
     @Test
     public void testToURI4() {
         String endpoint = null;
-        String defaultProtocol = "http";
+        String defaultProtocol = "org/apache/http";
 
         try {
             URI res = OSSUtils.toEndpointURI(endpoint, defaultProtocol);
